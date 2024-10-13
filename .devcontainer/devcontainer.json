@@ -1,0 +1,45 @@
+{
+  "dockerComposeFile": [
+    "docker-compose.yml"
+  ],
+  "service": "devcontainer",
+  "workspaceFolder": "/workspace",
+  "postCreateCommand": "./.devcontainer/postCreateCommand.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "mutantdino.resourcemonitor",
+        "ms-python.debugpy",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "eamodio.gitlens",
+        "redhat.vscode-yaml",
+        "ms-python.flake8",
+        "ms-python.isort"
+      ],
+      "settings": {
+        "launch": {
+          // Copied from: https://code.visualstudio.com/docs/python/tutorial-django#_create-a-debugger-launch-profile
+          "version": "0.2.0",
+          "configurations": [
+            {
+              "name": "Python Debugger",
+              "type": "debugpy",
+              "request": "launch",
+              "program": "${workspaceFolder}/pytest_example/main.py",
+              "justMyCode": true
+            }
+          ]
+        },
+        "git.autofetch" : true,
+        "python.defaultInterpreterPath": "./.venv/bin/python",
+        //"python.testing.pytestArgs": ["src"],
+        //"python.testing.unittestEnabled": false,
+        //"python.testing.pytestEnabled": true,
+        "flake8.cwd": "${workspaceFolder}",
+        "flake8.args": ["--config=.flake8"]
+      }
+    }
+  }
+}
