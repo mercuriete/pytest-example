@@ -34,9 +34,9 @@
         },
         "git.autofetch" : true,
         "python.defaultInterpreterPath": "./.venv/bin/python",
-        //"python.testing.pytestArgs": ["src"],
-        //"python.testing.unittestEnabled": false,
-        //"python.testing.pytestEnabled": true,
+        "python.testing.pytestArgs": ["tests"],
+        "python.testing.unittestEnabled": false,
+        "python.testing.pytestEnabled": true,
         "flake8.cwd": "${workspaceFolder}",
         "flake8.args": ["--config=.flake8"]
       }
